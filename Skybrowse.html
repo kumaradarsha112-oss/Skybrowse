@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skybrowse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #0078ff;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .toggle-btn {
+      background: white;
+      color: #0078ff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #ddd;
+    }
+
+    .search-bar {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .search-bar input {
+      width: 60%;
+      max-width: 400px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .search-bar button {
+      padding: 10px 20px;
+      border: none;
+      background: #0078ff;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .search-bar button:hover {
+      background: #005fcc;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .app-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .app-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .app-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: white;
+    }
+    .dark-mode header {
+      background: #1f1f1f;
+    }
+    .dark-mode .app-card {
+      background: #1e1e1e;
+      box-shadow: 0px 4px 10px rgba(255,255,255,0.1);
+    }
+    .dark-mode .search-bar input {
+      border: 1px solid #555;
+      background: #2a2a2a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Skybrowse</h1>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+  </header>
+
+  <div class="search-bar">
+    <form action="https://www.google.com/search" method="GET" target="_blank">
+      <input type="text" name="q" placeholder="Search yourSites...">
+      <button type="submit">🔍 Search</button>
+    </form>
+  </div>
+
+  <div class="apps-grid">
+
+    <div class="app-card" onclick="window.open('https://www.youtube.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      <h3>YouTube</h3>
+    </div>
+
+ <div class="app-card" onclick="window.open('https://www.instagram.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+      <h3>Instagram</h3>
+    </div>
+
+<!-- Facebook -->
+<div class="app-card" onclick="window.open('https://www.facebook.com','_blank')">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+  <h3>Facebook</h3>
+</div>
+
+    <div class="app-card" onclick="window.open('https://web.whatsapp.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      <h3>WhatsApp</h3>
+    </div>
+
+
+ <div class="app-card" onclick="window.open('https://twitter.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+      <h3>Twitter</h3>
+    </div>
+
+<div class="app-card" onclick="window.open('https://open.spotify.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="Spotify">
+      <h3>Spotify</h3> 
+</div>
+
+ <div class="app-card" onclick="window.open('https://www.netflix.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732228.png" alt="Netflix">
+      <h3>Netflix</h3>
+    </div>
+
+<!-- Snapchat -->
+<div class="app-card" onclick="window.open('https://www.snapchat.com','_blank')">
+  <img src="skylink/snapchat.png" alt="Snapchat">
+  <h3>Snapchat</h3>
+</div>
+
+<!-- TikTok -->
+<div class="app-card" onclick="window.open('https://www.tiktok.com','_blank')">
+  <img src="https://cdn-icons-png.flaticon.com/512/3046/3046127.png" alt="TikTok">
+  <h3>TikTok</h3>
+</div>
+
+<!-- Reddit -->
+<div class="app-card" onclick="window.open('https://www.reddit.com','_blank')">
+  <img src="skylink/reddit.png" alt="Reddit">
+  <h3>Reddit</h3>
+</div>
+
+
+<div class="app-card" onclick="window.open('https://www.linkedin.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384072.png" alt="LinkedIn">
+      <h3>LinkedIn</h3>
+    </div>
+ <div class="app-card" onclick="window.open('https://github.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+      <h3>GitHub</h3>
+    </div>
+ 
+        <div class="app-card" onclick="window.open('https://mail.google.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Gmail">
+      <h3>Gmail</h3>
+    </div>
+
+ 
+    <div class="app-card" onclick="window.open('https://news.google.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="News">
+      <h3>News</h3>
+    </div>
+<!-- Zoom -->
+<div class="app-card" onclick="window.open('https://zoom.us','_blank')">
+  <img src="skylink/zoom.png" alt="Zoom">
+  <h3>Zoom</h3>
+</div>
+
+
+
+
+    <div class="app-card" onclick="window.open('https://chat.openai.com','_blank')">
+      <img src="Skylink\Chatgpt.png"" alt="ChatGPT">
+      <h3>ChatGPT</h3>
+    </div>
+
+
+<!-- Gemini AI -->
+<div class="app-card" onclick="window.open('https://www.gemini.com/ai','_blank')">
+  <img src="skylink/gemini.png" alt="Gemini AI">
+  <h3>Gemini AI</h3>
+</div>
+
+   
+    <div class="app-card" onclick="window.open('https://maps.google.com','_blank')">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991231.png" alt="Google Maps">
+      <h3>Maps</h3>
+    </div>
+    
+ 
+
+<!-- Google Drive -->
+<div class="app-card" onclick="window.open('https://drive.google.com','_blank')">
+  <img src="skylink/googledrive.png" alt="Google Drive">
+  <h3>Drive</h3>
+</div>
+
+
+<!-- Pinterest -->
+<div class="app-card" onclick="window.open('https://www.pinterest.com','_blank')">
+  <img src="skylink/Pinterest-logo.png" alt="Pinterest">
+  <h3>Pinterest</h3>
+</div> 
+</div>
+
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
